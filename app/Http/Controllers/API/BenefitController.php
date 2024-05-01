@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Log;
 
 class BenefitController extends Controller
 {
+    /**
+     * @OA\Get(
+     *     path="/api/data",
+     *     summary="Obtener datos de beneficios",
+     *     tags={"Beneficios"},
+     *     @OA\Response(response=200, description="Datos de beneficios obtenidos correctamente"),
+     *     @OA\Response(response=404, description="Error al procesar la solicitud")
+     * )
+     */
     public function getData(){
         try {
             $beneficios = collect($this->getDataFromURL("https://run.mocky.io/v3/399b4ce1-5f6e-4983-a9e8-e3fa39e1ea71")['data']);
@@ -60,7 +69,7 @@ class BenefitController extends Controller
         } catch (\Throwable $th) {
             Log::error('Error al procesar la solicitud: '.$th->getMessage());
             $response = [
-                'code' => 500,
+                'code' => 404,
                 'success' => false,
                 'message' => 'Error al procesar la solicitud ',
             ];
