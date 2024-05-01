@@ -1,0 +1,83 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Endpoint get Beneficios",
+        "description": "Obtener beneficios filtrados y ordenados a partir de informacion obtenida de otros endpoints",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/get_data": {
+            "get": {
+                "tags": [
+                    "Beneficios"
+                ],
+                "summary": "Obtener datos de beneficios",
+                "operationId": "8dd17db29a5789ccb06cbc6c11ecb676",
+                "responses": {
+                    "200": {
+                        "description": "Datos de beneficios obtenidos correctamente"
+                    },
+                    "404": {
+                        "description": "Error al procesar la solicitud"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Beneficio": {
+                "properties": {
+                    "id_programa": {
+                        "type": "integer"
+                    },
+                    "monto": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "fecha_recepcion": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "fecha": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "anio": {
+                        "type": "integer"
+                    },
+                    "view": {
+                        "type": "boolean"
+                    },
+                    "ficha": {
+                        "$ref": "#/components/schemas/Ficha"
+                    }
+                },
+                "type": "object"
+            },
+            "Ficha": {
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "nombre": {
+                        "type": "string"
+                    },
+                    "id_programa": {
+                        "type": "integer"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "categoria": {
+                        "type": "string"
+                    },
+                    "descripcion": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
