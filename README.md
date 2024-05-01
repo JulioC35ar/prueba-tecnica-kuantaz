@@ -4,9 +4,9 @@
 ---
 ### Información
 #### Laravel Framework 8.83.27
-#### Intalación
+#### Instalación 
 - Clonar repositorio: https://github.com/JulioC35ar/prueba-tecnica-kuantaz.git
-- Toda configuracion inicial ya se encuentra lista al clonar repositorio, por lo tanto, no es necesario configurar .env
+- La configuración inicial ya se encuentra lista al clonar repositorio, por lo tanto, no es necesario configurar .env
 - Ejecutar
   ```console
     composer update
@@ -20,7 +20,7 @@ Ejecutar
 ```console
 php artisan test
 ```
-### Documentacion Swagger
+### Documentación Swagger
 Ingresar a la siguiente dirección: http://127.0.0.1:8000/api/documentation
 
 ### Archivo Postman
